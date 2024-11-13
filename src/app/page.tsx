@@ -28,7 +28,7 @@ import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
 import { ProductTabs } from "@/components/other-components/product-tab";
 
-const HomePage = async () => {
+const HomePage = () => {
   useEffect(() => {
     const lenis = new Lenis();
     function raf(time: any) {
