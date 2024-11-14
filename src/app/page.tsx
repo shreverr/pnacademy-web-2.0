@@ -1,9 +1,5 @@
 "use client";
-import {
-  AnimationContainer,
-  MaxWidthWrapper,
-  PricingCards,
-} from "@/components";
+import { AnimationContainer, MaxWidthWrapper } from "@/components";
 import { BentoCard, BentoGrid, CARDS } from "@/components/ui/bento-grid";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Button } from "@/components/ui/button";
@@ -20,7 +16,6 @@ import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
 import { COMPANIES, PROCESS } from "@/utils";
 import { REVIEWS } from "@/utils/constants/misc";
-// import { currentUser } from "@clerk/nextjs/server";
 import { ArrowRightIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,7 +34,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden scrollbar-hide size-full">
+    <div className="mt-20 overflow-x-hidden scrollbar-hide size-full">
       {/* Hero Section */}
       <MaxWidthWrapper>
         <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
@@ -93,8 +88,8 @@ const HomePage = () => {
               <Image
                 src="/assets/dashboard-dark.png"
                 alt="Dashboard"
-                width={1200}
-                height={1200}
+                width={1920}
+                height={1920}
                 quality={100}
                 className="rounded-md lg:rounded-xl bg-foreground/10 ring-1 ring-border"
               />

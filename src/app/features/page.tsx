@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
 const Features = () => {
   return (
-    <div>Features</div>
-  )
-}
+    <main className="flex flex-col h-full w-full items-center">
+      <div className="flex">
 
-export default Features
+      </div>
+      <div className="flex"></div>
+      <div className="flex"></div>
+      <div className="flex"></div>
+    </main>
+  );
+};
+
+export default Features;

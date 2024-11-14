@@ -11,23 +11,19 @@ const Footer = () => {
       <div className="grid gap-8 xl:grid-cols-3 xl:gap-8 w-full">
         <AnimationContainer delay={0.1}>
           <div className="flex flex-col items-start justify-start md:max-w-[200px]">
-            <div className="flex items-start">
+            <div className="flex items-center flex-row justify-center">
               <Image
                 src="/icons/logo.png"
                 alt="PNAcademy Logo"
                 width={40}
                 height={40}
               />
+              Pnacademy
             </div>
             <p className="text-muted-foreground mt-4 text-sm text-start">
               PNAcademy is a platform that provides a wide range of services for
               corporates, schools, universities and recruitment agencies.
             </p>
-            <span className="mt-4 text-neutral-200 text-sm flex items-center">
-              <Link href="https://pnacademy.in/" className="font-semibold ml-1">
-                PNAcademy
-              </Link>
-            </span>
           </div>
         </AnimationContainer>
 
@@ -195,10 +191,11 @@ const Footer = () => {
           </p>
         </AnimationContainer>
       </div>
-
-      <div className="h-[20rem] lg:h-[20rem] w-full hidden md:flex items-center justify-center">
-        <TextHoverEffect text="PNA" />
-      </div>
+      <AnimationContainer delay={0.4}>
+        <div className="h-[20rem] lg:h-[20rem] w-full hidden md:flex items-center justify-center">
+          <TextHoverEffect text="PNAcademy" />
+        </div>
+      </AnimationContainer>
     </footer>
   );
 };
