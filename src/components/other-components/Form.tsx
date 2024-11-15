@@ -1,102 +1,234 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-} from "@tabler/icons-react";
 import { cn } from "@/utils/functions/cn";
 import { Textarea } from "../ui/textarea";
 
-export function Form() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
-  };
-  return (
-    <div className=" w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-black">
-      <h2 className="font-bold text-xl text-neutral-200">
-        Get in touch with us
-      </h2>
-      <p className=" text-sm max-w-sm mt-2 text-neutral-300">
-        Fill out the form and we will get back to you as soon as possible
-      </p>
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
-      <form className="my-8" onSubmit={handleSubmit}>
-        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
+export function Form() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState<FormData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState<Partial<FormData>>({});
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+
+    // Clear error for the field being edited
+    if (errors[name as keyof FormData]) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: undefined,
+      }));
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: Partial<FormData> = {};
+
+    // Validate first name
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "First name is required";
+    }
+
+    // Validate last name
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Last name is required";
+    }
+
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Invalid email format";
+    }
+
+    // Validate phone
+    const phoneRegex = /^[6-9]\d{9}$/;
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!phoneRegex.test(formData.phone)) {
+      newErrors.phone = "Invalid phone number";
+    }
+
+    // Validate message
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Validate form
+    if (!validateForm()) {
+      return;
+    }
+
+    // Set loading state
+    setIsLoading(true);
+
+    try {
+      // Simulate form submission
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      // Reset form after successful submission
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+
+      // Show success message or trigger notification
+      alert("Form submitted successfully!");
+    } catch (error) {
+      // Handle submission error
+      console.error("Submission error:", error);
+      alert("Failed to submit form. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="w-full h-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-black flex flex-col min-h-[42rem]">
+      <div className="flex-none">
+        <h2 className="font-bold text-xl text-neutral-200">
+          Get in touch with us
+        </h2>
+        <p className="text-sm max-w-sm mt-2 text-neutral-300">
+          Fill out the form and we will get back to you as soon as possible
+        </p>
+      </div>
+
+      <form
+        className="flex flex-col flex-1 mt-8 min-h-0"
+        onSubmit={handleSubmit}
+      >
+        <div className="flex flex-col space-y-4 flex-none">
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
+            <LabelInputContainer>
+              <Label htmlFor="firstName">First name</Label>
+              <Input
+                id="firstName"
+                name="firstName"
+                placeholder="Prabhakar"
+                type="text"
+                value={formData.firstName}
+                onChange={handleInputChange}
+                className={errors.firstName ? "border-red-500" : ""}
+              />
+              {errors.firstName && (
+                <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>
+              )}
+            </LabelInputContainer>
+            <LabelInputContainer>
+              <Label htmlFor="lastName">Last name</Label>
+              <Input
+                id="lastName"
+                name="lastName"
+                placeholder="Kumar"
+                type="text"
+                value={formData.lastName}
+                onChange={handleInputChange}
+                className={errors.lastName ? "border-red-500" : ""}
+              />
+              {errors.lastName && (
+                <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>
+              )}
+            </LabelInputContainer>
+          </div>
           <LabelInputContainer>
-            <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Prabhakar" type="text" />
+            <Label htmlFor="email">Email Address</Label>
+            <Input
+              id="email"
+              name="email"
+              placeholder="prabhakarkumar@pnacademy.in"
+              type="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              className={errors.email ? "border-red-500" : ""}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+            )}
           </LabelInputContainer>
           <LabelInputContainer>
-            <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Kumar" type="text" />
+            <Label htmlFor="phone">Phone Number</Label>
+            <Input
+              id="phone"
+              name="phone"
+              placeholder="98XXXXXX56"
+              type="tel"
+              value={formData.phone}
+              onChange={handleInputChange}
+              className={errors.phone ? "border-red-500" : ""}
+            />
+            {errors.phone && (
+              <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+            )}
           </LabelInputContainer>
         </div>
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="email">Email Address</Label>
-          <Input
-            id="email"
-            placeholder="prabhakarkumar@pnacademy.in"
-            type="email"
-          />
-        </LabelInputContainer>
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="phone">Phone Number</Label>
-          <Input id="phone" placeholder="98XXXXXX56" type="phone" />
-        </LabelInputContainer>
-        <LabelInputContainer className="mb-8">
-          <Label htmlFor="message">Message</Label>
-          <Textarea
-            id="message"
-            className="max-h-[4rem] flex h-10 w-full border-none bg-zinc-800 text-white shadow-input rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent
-          file:text-sm file:font-medium placeholder:text-neutral-400 dark:placeholder-text-neutral-600
-          focus-visible:outline-none focus-visible:ring-[2px]  focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-600
-           disabled:cursor-not-allowed disabled:opacity-50
-           dark:shadow-[0px_0px_1px_1px_var(--neutral-700)]
-           group-hover/input:shadow-none transition duration-400"
-            placeholder="..."
-          />
-        </LabelInputContainer>
 
-        <button
-          className="bg-gradient-to-br relative group/btn from-zinc-900 to-zinc-900  block bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-          type="submit"
-        >
-          Send &rarr;
-          <BottomGradient />
-        </button>
+        <div className="flex flex-col flex-1 min-h-18 mt-4 mb-4">
+          <Label htmlFor="message" className="mb-2">
+            Message
+          </Label>
+          <div className="flex-1 min-h-10">
+            <Textarea
+              id="message"
+              name="message"
+              className={`w-full h-full resize-none border-none bg-zinc-800 text-white shadow-input rounded-md px-3 py-2 text-sm ${
+                errors.message ? "border-red-500" : ""
+              }`}
+              placeholder="Type your message here..."
+              value={formData.message}
+              onChange={handleInputChange}
+            />
+            {errors.message && (
+              <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+            )}
+          </div>
+        </div>
 
-        <div className="bg-gradient-to-r from-transparent  via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-
-        {/* <div className="flex flex-col space-y-4">
+        <div className="flex-none mt-auto">
           <button
-            className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-zinc-900 shadow-[0px_0px_1px_1px_var(--neutral-800)]"
+            className="bg-gradient-to-br relative group/btn from-zinc-900 to-zinc-900 block bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
+            disabled={isLoading}
           >
-            <IconBrandGithub className="h-4 w-4 text-neutral-300" />
-            <span className="text-neutral-300 text-sm">GitHub</span>
+            {isLoading ? "Sending..." : "Send →"}
             <BottomGradient />
           </button>
-          <button
-            className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-zinc-900 shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit"
-          >
-            <IconBrandGoogle className="h-4 w-4 text-neutral-300" />
-            <span className="text-neutral-300 text-sm">Google</span>
-            <BottomGradient />
-          </button>
-          <button
-            className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit"
-          >
-            <IconBrandOnlyfans className="h-4 w-4 text-neutral-300" />
-            <span className="text-neutral-300 text-sm">OnlyFans</span>
-            <BottomGradient />
-          </button>
-        </div> */}
+
+          <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+        </div>
       </form>
     </div>
   );

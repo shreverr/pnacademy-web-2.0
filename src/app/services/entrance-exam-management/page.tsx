@@ -1,10 +1,11 @@
 import AnimationContainer from "@/components/global/animation-container";
 import { Form } from "@/components/other-components/Form";
 import { Sparkles } from "@/components/ui/sparkles";
-import { Clipboard, Pyramid } from "lucide-react";
+import { BrainCircuit, Clipboard, Lock, Pyramid, Server } from "lucide-react";
 import React from "react";
 import Image from "next/image";
 import { IconClipboardText } from "@tabler/icons-react";
+import { GlowingStarsCard } from "@/components/other-components/glowing-star-card-tab";
 
 const page = () => {
   return (
@@ -23,13 +24,13 @@ const page = () => {
         </button>
       </AnimationContainer>
 
-      <div className="flex flex-row items-center gap-4 justify-center w-full">
+      <div className="flex flex-col 2xl:flex-row items-center gap-4 justify-center w-full">
         <AnimationContainer
           delay={0.2}
-          className="flex h-[calc(100vh-11rem)] flex-col rounded-2xl border-muted border-2 w-2/3 bg-black overflow-hidden"
+          className="hidden lg:flex h-[calc(100vh-11rem)] flex-col rounded-2xl border-muted border-2 min-h-[42rem] 2xl:w-2/3 w-full bg-black overflow-hidden"
         >
-          <div className="relative  h-80 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#369eff,transparent_90%)] before:opacity-100  after:absolute after:border-2 after:-left-1/2 after:top-1/2 after:aspect-[1/1.8] after:w-[200%] after:rounded-[50%] after:border-b after:border-[#7876c566] after:bg-zinc-900">
-            <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#ffffff2c_1px,transparent_1px),linear-gradient(to_bottom,#3a3a3a01_1px,transparent_1px)] bg-[size:70px_80px] "></div>
+          <div className="relative h-80 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#369eff,transparent_90%)] before:opacity-100 after:absolute after:border-2 after:-left-1/2 after:top-1/2 after:aspect-[1/1.8] after:w-[200%] after:rounded-[50%] after:border-b after:border-[#7876c566] after:bg-zinc-900">
+            <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#ffffff2c_1px,transparent_1px),linear-gradient(to_bottom,#3a3a3a01_1px,transparent_1px)] bg-[size:70px_80px]"></div>
             <Sparkles
               density={400}
               size={1.4}
@@ -37,29 +38,57 @@ const page = () => {
               className="absolute inset-x-0 top-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
             />
           </div>
-          <div className="mx-auto -mt-52  w-screen max-w-2xl relative z-10">
-            <div className="bg-white backdrop-blur-lg border border-gray-800 p-4  w-28 h-28 mx-auto grid place-content-center rounded-full">
+          <div className="mx-auto -mt-52 w-screen max-w-2xl relative z-10">
+            <div className="bg-white backdrop-blur-lg border border-gray-800 p-4 w-28 h-28 mx-auto grid place-content-center rounded-full">
               <Image
                 src="/icons/logo.png"
                 alt="PNAcademy Logo"
                 className="pl-2 invert"
                 width={120}
                 height={120}
+                priority
               />
             </div>
           </div>
-          <article className="text-white  pt-2 w-2/3 mx-auto block text-center z-10 relative ">
+          <article className="text-white pt-2 w-2/3 mx-auto block text-center z-10 relative">
             <h1 className="text-center text-5xl text-white font-medium py-3">
-              PNAcademy
+              Entrance Exam Management
             </h1>
-            Customized Assessment Solutions Designed to Meet Your Unique Needs.
+            <p>
+              Simplify entrance exams with customizable tests, stringent
+              proctoring, in-depth evaluation, and effective management
+              features.
+            </p>
           </article>
-
-          {/* <div className="flex w-full"></div> */}
+          <div className="w-full p-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <GlowingStarsCard
+                title={"Effortless Test Creation"}
+                description={
+                  "Create and customize tests with a wide range of question types and formats."
+                }
+                icon={<Clipboard className="size-5" />}
+              />
+              <GlowingStarsCard
+                title={"Scalable Infrastructure"}
+                description={
+                  "Conduct exams for thousands of students simultaneously with our robust infrastructure."
+                }
+                icon={<Server className="size-5" />}
+              />
+              <GlowingStarsCard
+                title={"Advanced Proctoring "}
+                description={
+                  "Ensure the integrity of your exams with AI-powered proctoring features."
+                }
+                icon={<BrainCircuit className="size-5" />}
+              />
+            </div>
+          </div>
         </AnimationContainer>
         <AnimationContainer
           delay={0.3}
-          className="flex  h-[calc(100vh-11rem)] w-1/3"
+          className="flex h-[calc(100vh-11rem)] min-h-[42rem] w-full 2xl:w-1/3"
         >
           <Form />
         </AnimationContainer>

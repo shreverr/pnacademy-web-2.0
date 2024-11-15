@@ -186,7 +186,7 @@ const HomePage = () => {
               Choose a plan that works for you
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Get started with Linkify today and enjoy more features with our
+              Get started with PNAcademy today and enjoy more features with our
               pro plans.
             </p>
           </div>
