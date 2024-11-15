@@ -22,18 +22,21 @@ const TermsAndConditions = () => {
           In these Terms and Conditions:
         </p>
         <ul className="list-disc ml-8 mt-4 text-muted-foreground">
-          <li>"Platform" refers to PNAcademy's assessment platform</li>
           <li>
-            "Institution" refers to educational institutions, schools, colleges,
-            or organizations using our services
+            &quot; Platform &quot; refers to PNAcademy &apos; s assessment
+            platform
           </li>
           <li>
-            "Users" includes administrators, faculty, and assessment
+            &quot; Institution &quot; refers to educational institutions,
+            schools, colleges, or organizations using our services
+          </li>
+          <li>
+            &quot; Users &quot; includes administrators, faculty, and assessment
             participants
           </li>
           <li>
-            "Services" refers to all features and functionalities provided by
-            PNAcademy
+            &quot; Services &quot; refers to all features and functionalities
+            provided by PNAcademy
           </li>
         </ul>
 
@@ -111,7 +114,7 @@ const TermsAndConditions = () => {
         <h2 className="text-xl font-medium mt-12">8. Liability</h2>
         <p className="mt-8 text-muted-foreground">Limitations of liability:</p>
         <ul className="list-disc ml-8 mt-4 text-muted-foreground">
-          <li>Service provided "as is"</li>
+          <li>Service provided as is</li>
           <li>No guarantee of uninterrupted service</li>
           <li>Limited liability for data loss</li>
           <li>Force majeure conditions</li>
@@ -151,8 +154,8 @@ const TermsAndConditions = () => {
         </ul>
 
         <p className="mt-12 font-medium">
-          By using PNAcademy's platform, you acknowledge that you have read,
-          understood, and agree to be bound by these Terms and Conditions.
+          By using PNAcadem &apos; s platform, you acknowledge that you have
+          read, understood, and agree to be bound by these Terms and Conditions.
         </p>
       </AnimationContainer>
     </MaxWidthWrapper>

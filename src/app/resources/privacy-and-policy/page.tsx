@@ -156,9 +156,10 @@ const PrivacyAndPolicy = () => {
         </ul>
 
         <p className="mt-12 font-medium">
-          By using PNAcademy's assessment platform, institutions acknowledge
-          their agreement to this Privacy Policy and their responsibility to
-          inform assessment participants about these data practices.
+          By using PNAcademy &lsquo; s assessment platform, institutions
+          acknowledge their agreement to this Privacy Policy and their
+          responsibility to inform assessment participants about these data
+          practices.
         </p>
       </AnimationContainer>
     </MaxWidthWrapper>
