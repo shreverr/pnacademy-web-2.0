@@ -2,11 +2,17 @@ const nodemailer = require('nodemailer');
 
 async function handler(req: Request, res: Response) {
   try {
-    const username = process.env.EMAIL_USERNAME;
-    const password = process.env.EMAIL_PASSWORD;
-    const myEmail = process.env.EMAIL;
-    const host = process.env.EMAIL_HOST;
-    const port = process.env.EMAIL_PORT;
+    // const username = process.env.EMAIL_USERNAME;
+    // const password = process.env.EMAIL_PASSWORD;
+    // const myEmail = process.env.EMAIL;
+    // const host = process.env.EMAIL_HOST;
+    // const port = process.env.EMAIL_PORT;
+
+    const username = 'info@pnacademy.in'
+    const password = 'Test@1234'
+    const myEmail = 'info@pnacademy.in'
+    const host = 'smtpout.secureserver.net'
+    const port = '465'
 
     console.log(username, password, myEmail, host, port);
 
