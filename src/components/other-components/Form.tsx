@@ -1,3 +1,4 @@
+// Form.tsx
 "use client";
 import React, { useState } from "react";
 import { Label } from "../ui/label";
@@ -34,7 +35,6 @@ export function Form() {
       [name]: value,
     }));
 
-    // Clear error for the field being edited
     if (errors[name as keyof FormData]) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -46,17 +46,14 @@ export function Form() {
   const validateForm = (): boolean => {
     const newErrors: Partial<FormData> = {};
 
-    // Validate first name
     if (!formData.firstName.trim()) {
       newErrors.firstName = "First name is required";
     }
 
-    // Validate last name
     if (!formData.lastName.trim()) {
       newErrors.lastName = "Last name is required";
     }
 
-    // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
@@ -64,7 +61,6 @@ export function Form() {
       newErrors.email = "Invalid email format";
     }
 
-    // Validate phone
     const phoneRegex = /^[6-9]\d{9}$/;
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
@@ -72,7 +68,6 @@ export function Form() {
       newErrors.phone = "Invalid phone number";
     }
 
-    // Validate message
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
     }
@@ -84,19 +79,28 @@ export function Form() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validate form
     if (!validateForm()) {
       return;
     }
 
-    // Set loading state
     setIsLoading(true);
 
-    try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+    console.log("Submitting form data:", formData);
 
-      // Reset form after successful submission
+    try {
+      const response = await fetch("/api/v1/mail", {
+        // Updated API route
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       setFormData({
         firstName: "",
         lastName: "",
@@ -105,12 +109,10 @@ export function Form() {
         message: "",
       });
 
-      // Show success message or trigger notification
-      alert("Form submitted successfully!");
+      alert("Message sent successfully!");
     } catch (error) {
-      // Handle submission error
       console.error("Submission error:", error);
-      alert("Failed to submit form. Please try again.");
+      alert("Failed to send message. Please try again.");
     } finally {
       setIsLoading(false);
     }
