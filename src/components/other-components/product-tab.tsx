@@ -77,7 +77,7 @@ export function ProductTabs() {
 const SuperAdmin = () => {
   return (
     <Image
-      src="/assets/dashboard-dark.png"
+      src="/images/super.png"
       alt="dummy image"
       width="1000"
       height="1000"
@@ -88,7 +88,7 @@ const SuperAdmin = () => {
 const Faculty = () => {
   return (
     <Image
-      src="/assets/faculty-dark.png"
+      src="/images/faculty.png"
       alt="dummy image"
       width="1000"
       height="1000"
@@ -99,8 +99,8 @@ const Faculty = () => {
 const Student = () => {
   return (
     <Image
-      src="/assets/student-dark.png"
-      alt="dummy image"
+      src="/images/student.png"
+      alt="Student"
       width="1000"
       height="1000"
       className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
@@ -110,8 +110,8 @@ const Student = () => {
 const AICreate = () => {
   return (
     <Image
-      src="/assets/dashboard-dark.png"
-      alt="dummy image"
+      src="/images/ai-create.png"
+      alt="AI Create"
       width="1000"
       height="1000"
       className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
@@ -121,8 +121,8 @@ const AICreate = () => {
 const CreateAssessment = () => {
   return (
     <Image
-      src="/assets/dashboard-dark.png"
-      alt="dummy image"
+      src="/images/Create.png"
+      alt="Create Assessment"
       width="1000"
       height="1000"
       className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
@@ -132,8 +132,8 @@ const CreateAssessment = () => {
 const Assessment = () => {
   return (
     <Image
-      src="/assets/dashboard-dark.png"
-      alt="dummy image"
+      src="/images/assessment.png"
+      alt="Assessment"
       width="1000"
       height="1000"
       className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
@@ -143,7 +143,7 @@ const Assessment = () => {
 const Notification = () => {
   return (
     <Image
-      src="/assets/dashboard-dark.png"
+      src="/images/noti.png"
       alt="dummy image"
       width="1000"
       height="1000"

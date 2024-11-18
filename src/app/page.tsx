@@ -57,12 +57,23 @@ const HomePage = () => {
               </span>
             </h1>
             <p className="mb-12 text-lg tracking-tight text-muted-foreground md:text-xl text-balance">
-              Elevate Your Learning with PNAcademy: Experience personalized
-              performance analysis that reveals your strengths and weaknesses.
+              <span className="text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text inline-bloc">
+                IITians, NITians, and Leading Corporate Trainers at PNAcademy:{" "}
+              </span>{" "}
+              Shaping Careers with Expert Assessments, SME Guidance, and Career
+              Coaching for
+              <span className="text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text inline-bloc">
+                IT & Government Jobs.{" "}
+              </span>{" "}
+              Elevate Your Learning with
               <br className="hidden md:block" />
               <span className="hidden md:block">
-                Tailor your study plan effortlessly and achieve academic
-                excellence.
+                Personalized Performance Analysis that Helps You Identify Your
+                Strengths and Weaknesses,
+                <span className="text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text inline-bloc">
+                  Tailor Your Study Plan, and Achieve Success in Exams and
+                  Career
+                </span>
               </span>
             </p>
             <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
@@ -103,8 +114,9 @@ const HomePage = () => {
           <div className="py-14">
             <div className="mx-auto px-4 md:px-8">
               <h2 className="text-center text-sm font-medium font-heading text-neutral-400 uppercase">
-                Offers exceptional assessment solutions customized to meet
-                unique needs.
+                IITians and NITians at PNAcademy: Shaping Careers with Expert
+                Assessments, SME Guidance, and Career Coaching for IT &
+                Government Jobs
               </h2>
               <ProductTabs />
             </div>

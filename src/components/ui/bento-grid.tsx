@@ -30,7 +30,6 @@ import {
   CardTitle,
 } from "./card";
 import { Input } from "./input";
-import { Integrations } from "./integrations";
 import { Label } from "./label";
 import {
   Select,
@@ -62,6 +61,7 @@ export const CARDS = [
             <div>
               <Label>Subject</Label>
               <Input
+                disabled={true}
                 type="text"
                 placeholder="e.g., Mathematics, Science..."
                 className="w-full focus-visible:ring-0 focus-visible:ring-transparent"
