@@ -3,6 +3,7 @@ import { AnimationContainer, MaxWidthWrapper } from "@/components";
 import { BentoCard, BentoGrid, CARDS } from "@/components/ui/bento-grid";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Button } from "@/components/ui/button";
+
 import {
   Card,
   CardContent,
@@ -22,8 +23,10 @@ import Link from "next/link";
 import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
 import { ProductTabs } from "@/components/other-components/product-tab";
+import { useRouter } from "next/navigation";
 
 const HomePage = () => {
+  const router = useRouter();
   useEffect(() => {
     const lenis = new Lenis();
     function raf(time: any) {
@@ -131,7 +134,7 @@ const HomePage = () => {
             <MagicBadge title="Features" />
             <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6"></h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              PNAcademy offers a wide range of features to help you manage your
+              Pnacademy offers a wide range of features to help you manage your
               assessments more effectively. Here&apos;s how it works
             </p>
           </div>
@@ -151,7 +154,7 @@ const HomePage = () => {
           <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
             <MagicBadge title="The Value you get" />
             <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-              What we Offer in PNAcademy
+              What we Offer in Pnacademy
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
               We offer a wide range of features to help you manage your
@@ -224,7 +227,7 @@ const HomePage = () => {
               What our users are saying
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Here&apos;s what some of our users have to say about PNAcademy.
+              Here&apos;s what some of our users have to say about Pnacademy.
             </p>
           </div>
         </AnimationContainer>
@@ -327,10 +330,10 @@ const HomePage = () => {
                 next-generation assessment platform.
               </p>
               <div className="mt-6">
-                <Link href={"/get-quote"}>
+                <Button onClick={() => router.push("/get-quote")}>
                   Get started
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
-                </Link>
+                </Button>
               </div>
             </div>
           </LampContainer>

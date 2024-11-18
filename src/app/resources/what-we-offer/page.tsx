@@ -1,3 +1,4 @@
+"use client";
 import { AnimationContainer, MaxWidthWrapper } from "@/components";
 import React from "react";
 import {
@@ -23,8 +24,11 @@ import {
   BarChart,
   School,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const WhatWeOffer = () => {
+  const router = useRouter();
+
   const mainCategories = [
     {
       title: "Defense Services Exams",
@@ -484,8 +488,11 @@ const WhatWeOffer = () => {
               Join thousands of successful candidates who achieved their dreams
               with our guidance
             </p>
-            <button className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300 font-semibold">
-              Get Started Today
+            <button
+              onClick={() => router.push("/get-quote")}
+              className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300 font-semibold"
+            >
+              Get Started
             </button>
           </div>
         </section>
