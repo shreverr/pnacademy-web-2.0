@@ -8,6 +8,8 @@ async function handler(req: Request, res: Response) {
     const host = process.env.EMAIL_HOST;
     const port = process.env.EMAIL_PORT;
 
+    console.log(username, password, myEmail, host, port);
+
     const transporter = nodemailer.createTransport({
       host: host,
       port: port,
