@@ -35,7 +35,7 @@ const Footer = () => {
                 <ul className="mt-4 text-sm text-muted-foreground">
                   <li className="mt-2">
                     <Link
-                      href=""
+                      href="/services/assessment-for-corporate"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Assessments For Corporates
@@ -43,7 +43,7 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href=""
+                      href="/services/assessments-for-schools"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Assessments for Schools
@@ -51,7 +51,15 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href=""
+                      href="/services/educational-institutions"
+                      className="hover:text-foreground transition-all duration-300"
+                    >
+                      Assessments For Educational Institution
+                    </Link>
+                  </li>
+                  <li className="mt-2">
+                    <Link
+                      href="/services/university-exam-management"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       University Exam Management
@@ -59,7 +67,7 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href=""
+                      href="/services/entrance-exam-management"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Enterence Exam Management
@@ -67,7 +75,7 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href=""
+                      href="/services/aptitude-for-recruitment"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Aptitude For Recruitment
@@ -82,7 +90,7 @@ const Footer = () => {
                 <ul className="mt-4 text-sm text-muted-foreground">
                   <li className="">
                     <Link
-                      href="/resources/blog"
+                      href="/"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Features
@@ -90,7 +98,7 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href="/resources/help"
+                      href="/clients"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Clients
@@ -107,7 +115,7 @@ const Footer = () => {
                 <ul className="mt-4 text-sm text-muted-foreground">
                   <li className="mt-2">
                     <Link
-                      href="/terms"
+                      href="/resources/what-we-offer"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       What We Offer
@@ -115,7 +123,7 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href=""
+                      href="/resources/about"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       About Us
@@ -123,7 +131,7 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href="/privacy"
+                      href="/resources/privacy-and-policy"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Privacy Policy
@@ -131,7 +139,7 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href="/terms"
+                      href="/resources/terms-and-conditions"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Terms & Conditions

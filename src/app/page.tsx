@@ -67,11 +67,8 @@ const HomePage = () => {
             </p>
             <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
               <Button asChild>
-                <Link
-                  href={false ? "/dashboard" : "/auth/sign-in"}
-                  className="flex items-center"
-                >
-                  Explore Full Features
+                <Link href={"/get-quote"} className="flex items-center">
+                  Get Started
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </Link>
               </Button>

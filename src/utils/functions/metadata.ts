@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const generateMetadata = ({
-    title = `${process.env.NEXT_PUBLIC_APP_NAME} - Online Assessment Platform`,
+    title = `PNAcademy - Online Assessment Platform`,
     description = `PNAcademy is the link management platform for businesses. It helps you build, brand, and track your links.`,
     image = "/thumbnail.png",
     icons = [

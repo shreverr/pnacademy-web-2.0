@@ -1,16 +1,8 @@
 import React from "react";
 import { AnimationContainer, MaxWidthWrapper } from "@/components";
 import Image from "next/image";
-import {
-  Target,
-  Globe,
-  Lock,
-  Users,
-  Trophy,
-  Lightbulb,
-  Shield,
-  Heart,
-} from "lucide-react";
+import { Globe, Users, Lightbulb, Shield } from "lucide-react";
+import Link from "next/link";
 
 const AboutPage = () => {
   // Core Values
@@ -63,19 +55,19 @@ const AboutPage = () => {
 
   // Gallery Images (replace with actual images)
   const galleryImages = [
-    "/images/team1.jpg",
-    "/images/office1.jpg",
-    "/images/team2.jpg",
-    "/images/office2.jpg",
-    "/images/meeting.jpg",
-    "/images/workspace.jpg",
+    "/images/team1.png",
+    "/images/team2.png",
+    "/images/team3.png",
+    "/images/team4.png",
+    "/images/team5.png",
+    "/images/team6.png",
   ];
 
   return (
     <MaxWidthWrapper className="mb-40">
       <AnimationContainer delay={0.1} className="w-full">
         {/* Hero Section */}
-        <section className="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <section className="grid md:grid-cols-2 gap-12 items-center mb-20 mt-10">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Empowering Education with Innovative Assessment Solutions
@@ -98,14 +90,17 @@ const AboutPage = () => {
               </button>
             </div>
           </div>
-          <div className="hidden md:block">
-            <Image
-              src="/images/team-hero.jpg"
-              alt="PNAcademy Team"
-              width={600}
-              height={500}
-              className="rounded-xl shadow-2xl"
-            />
+          <div className="flex-col-reverse items-center justify-center md:flex md:flex-row md:justify-end w-full">
+            <div className="flex flex-col items-center justify-center gap-4">
+              <Image
+                src="/founder.png"
+                alt="PNAcademy Team"
+                width={300}
+                height={500}
+                className="rounded-xl shadow-2xl"
+              />
+              <p>Neeraj Kumar</p>
+            </div>
           </div>
         </section>
 
@@ -187,9 +182,12 @@ const AboutPage = () => {
             solutions to create more effective, secure, and insightful
             evaluations.
           </p>
-          <button className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+          <Link
+            href="/get-quote"
+            className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          >
             Get Started
-          </button>
+          </Link>
         </section>
       </AnimationContainer>
     </MaxWidthWrapper>
