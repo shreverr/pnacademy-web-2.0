@@ -94,7 +94,7 @@ const HomePage = () => {
             <div className="-m-2 rounded-xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl">
               <BorderBeam size={250} duration={12} delay={9} />
               <Image
-                src="/assets/dashboard-dark.png"
+                src="/images/super.png"
                 alt="Dashboard"
                 width={1920}
                 height={1920}
