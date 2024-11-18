@@ -61,13 +61,13 @@ const HomePage = () => {
                 IITians, NITians, and Leading Corporate Trainers at PNAcademy:{" "}
               </span>{" "}
               Shaping Careers with Expert Assessments, SME Guidance, and Career
-              Coaching for
+              Coaching for {""}
               <span className="text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text inline-bloc">
                 IT & Government Jobs.{" "}
               </span>{" "}
               Elevate Your Learning with
               <br className="hidden md:block" />
-              <span className="hidden md:block">
+              <span className="">
                 Personalized Performance Analysis that Helps You Identify Your
                 Strengths and Weaknesses,
                 <span className="text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text inline-bloc">
@@ -327,10 +327,10 @@ const HomePage = () => {
                 next-generation assessment platform.
               </p>
               <div className="mt-6">
-                <Button>
-                  Get started for free
+                <Link href={"/get-quote"}>
+                  Get started
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
-                </Button>
+                </Link>
               </div>
             </div>
           </LampContainer>
