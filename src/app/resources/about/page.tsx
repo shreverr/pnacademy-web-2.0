@@ -73,7 +73,7 @@ const AboutPage = () => {
               Empowering Education with Innovative Assessment Solutions
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              At Pnacademy, we are dedicated to revolutionizing the assessment
+              At PNAcademy, we are dedicated to revolutionizing the assessment
               process with cutting-edge technology and innovative solutions. Our
               mission is to provide educational institutions and corporations
               with the tools they need to create, distribute, and evaluate
@@ -108,7 +108,7 @@ const AboutPage = () => {
         <section className="mb-20 text-center">
           <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
           <p className="max-w-4xl mx-auto text-lg text-muted-foreground">
-            At Pnacademy, we revolutionize the assessment process with
+            At PNAcademy, we revolutionize the assessment process with
             cutting-edge technology and innovative solutions. Our mission is to
             provide educational institutions and corporations with efficient,
             secure, and user-friendly assessment tools. By leveraging advanced

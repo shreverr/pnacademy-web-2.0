@@ -18,7 +18,7 @@ const Footer = () => {
                 width={40}
                 height={40}
               />
-              Pnacademy
+              PNAcademy
             </div>
             <p className="text-muted-foreground mt-4 text-sm text-start">
               PNAcademy is a platform that provides a wide range of services for

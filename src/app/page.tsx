@@ -131,7 +131,7 @@ const HomePage = () => {
             <MagicBadge title="Features" />
             <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6"></h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Pnacademy offers a wide range of features to help you manage your
+              PNAcademy offers a wide range of features to help you manage your
               assessments more effectively. Here&apos;s how it works
             </p>
           </div>
@@ -151,7 +151,7 @@ const HomePage = () => {
           <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
             <MagicBadge title="The Value you get" />
             <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-              What we Offer in Pnacademy
+              What we Offer in PNAcademy
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
               We offer a wide range of features to help you manage your
@@ -224,7 +224,7 @@ const HomePage = () => {
               What our users are saying
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Here&apos;s what some of our users have to say about Pnacademy.
+              Here&apos;s what some of our users have to say about PNAcademy.
             </p>
           </div>
         </AnimationContainer>
