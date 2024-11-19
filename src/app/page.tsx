@@ -15,15 +15,24 @@ import {
 import { LampContainer } from "@/components/ui/lamp";
 import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
-import { COMPANIES, PROCESS } from "@/utils";
+import { PROCESS } from "@/utils";
 import { REVIEWS } from "@/utils/constants/misc";
-import { ArrowRightIcon, StarIcon } from "lucide-react";
+import {
+  ArrowRightIcon,
+  Sparkle,
+  Sparkles,
+  Star,
+  StarIcon,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
 import { ProductTabs } from "@/components/other-components/product-tab";
 import { useRouter } from "next/navigation";
+import { DialogTrigger } from "@/components/ui/dialog";
+import PopUp from "@/components/other-components/pop-up";
+import LiquidGradientButton from "@/components/other-components/liquid-gradient-button";
 
 const HomePage = () => {
   const router = useRouter();
@@ -38,6 +47,7 @@ const HomePage = () => {
 
   return (
     <div className="mt-20 overflow-x-hidden scrollbar-hide size-full">
+      <PopUp />
       {/* Hero Section */}
       <MaxWidthWrapper>
         <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
@@ -79,13 +89,18 @@ const HomePage = () => {
                 </span>
               </span>
             </p>
-            <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
+            <div className="flex flex-row items-center justify-center whitespace-nowrap gap-4 z-50">
               <Button asChild>
                 <Link href={"/get-quote"} className="flex items-center">
                   Get Started
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
+
+              <LiquidGradientButton
+                title="Register"
+                icon={<Sparkles size={18} />}
+              />
             </div>
           </AnimationContainer>
 
