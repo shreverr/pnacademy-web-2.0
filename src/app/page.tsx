@@ -100,6 +100,7 @@ const HomePage = () => {
               <LiquidGradientButton
                 title="Register"
                 icon={<Sparkles size={18} />}
+                link="https://docs.google.com/forms/d/e/1FAIpQLScikrOuS8F3T88wwgFhJZL9uljLxq61XAohtG-WI0DjM4b1eA/viewform?vc=0&c=0&w=1&flr=0&usp=mail_form_link"
               />
             </div>
           </AnimationContainer>
