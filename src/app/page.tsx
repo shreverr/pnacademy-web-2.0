@@ -31,7 +31,7 @@ import { useEffect } from "react";
 import { ProductTabs } from "@/components/other-components/product-tab";
 import { useRouter } from "next/navigation";
 import { DialogTrigger } from "@/components/ui/dialog";
-import PopUp from "@/components/other-components/pop-up";
+// import PopUp from "@/components/other-components/pop-up";
 import LiquidGradientButton from "@/components/other-components/liquid-gradient-button";
 
 const HomePage = () => {
@@ -47,7 +47,7 @@ const HomePage = () => {
 
   return (
     <div className="mt-20 overflow-x-hidden scrollbar-hide size-full">
-      <PopUp />
+      {/* <PopUp /> */}
       {/* Hero Section */}
       <MaxWidthWrapper>
         <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
